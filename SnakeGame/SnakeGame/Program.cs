@@ -15,6 +15,14 @@ namespace SnakeGame
             bool gameLive = true;
             ConsoleKeyInfo consoleKey; // holds whatever key is pressed
 
+            Random rand = new Random();
+            //  display food on the console during the game
+            char food = '@';
+            int fx, fy;
+            //random generate food location
+            fx = rand.Next(0, 79);  
+            fy = rand.Next(2, 24);
+
             // location info & display
             int x = 0, y = 2; // y is 2 to allow the top row for directions & space
             int dx = 1, dy = 0;
@@ -49,7 +57,6 @@ namespace SnakeGame
                     consoleKey = Console.ReadKey(true);
                     switch (consoleKey.Key)
                     {
-                      
                         case ConsoleKey.UpArrow: //UP
                             dx = 0;
                             dy = -1;
@@ -98,6 +105,10 @@ namespace SnakeGame
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
                 Console.Write(ch);
+
+                // write the food in the new random position
+                Console.SetCursorPosition(fx, fy);
+                Console.Write(food);
 
                 // pause to allow eyeballs to keep up
                 System.Threading.Thread.Sleep(delayInMillisecs);
