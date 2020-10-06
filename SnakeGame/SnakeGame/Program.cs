@@ -18,7 +18,7 @@ namespace SnakeGame
             Random rand = new Random();
             char food = '@';//  display food on the console during the game
             int fx, fy;
-            int countSteps = 0; // count steps moved
+            int countSteps = 0; // count steps each time the snake moves
             //random generate food location
             fx = rand.Next(0, 79);  
             fy = rand.Next(2, 24);
