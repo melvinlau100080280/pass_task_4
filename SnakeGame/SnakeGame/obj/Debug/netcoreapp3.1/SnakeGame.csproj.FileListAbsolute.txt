@@ -65,4 +65,20 @@ C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1
 C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
 C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
 C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
+<<<<<<< HEAD
 >>>>>>> adcdd3771142954d0d42a715755df917781f174b
+=======
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
+>>>>>>> fa7315958623b2c0906137eec87bd343e02eb7a9
