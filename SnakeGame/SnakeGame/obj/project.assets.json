@@ -14,11 +14,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\User\\Desktop\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
       "projectName": "SnakeGame",
       "projectPath": "C:\\Users\\User\\Desktop\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\Desktop\\pass_task_4\\SnakeGame\\SnakeGame\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+      "projectName": "SnakeGame",
+      "projectPath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+      "packagesPath": "C:\\Users\\Z\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\obj\\",
+>>>>>>> adcdd3771142954d0d42a715755df917781f174b
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
