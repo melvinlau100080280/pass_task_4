@@ -1,9 +1,19 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace SnakeGame
 {
     class Program
     {
+        struct Position
+        {
+            public int row;
+            public int col;
+            public Position(int row, int col)
+            {
+                this.row = row;
+                this.col = col;
+            }
+        }
         static void Main(string[] args)
         {
             // start game
@@ -43,6 +53,20 @@ namespace SnakeGame
             // whether to keep trails
             bool trail = false;
 
+            //Create random obstacles
+            List<Position> obstacles = new List<Position>();
+            Random randomobs = new Random();
+            obstacles.Add(new Position(randomobs.Next(2, 24), randomobs.Next(1, 79)));
+            obstacles.Add(new Position(randomobs.Next(2, 24), randomobs.Next(1, 79)));
+         
+       
+            //Display obstacles
+            foreach (Position obstacle in obstacles)
+            {
+                Console.SetCursorPosition(obstacle.col, obstacle.row);
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("||");
+            }
             do // until escape
             {
                 // print directions at top, then restore position
@@ -62,7 +86,8 @@ namespace SnakeGame
                 Console.WriteLine("====================="); //scoreboard design
                 Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
-
+              
+                
                 // see if a key has been pressed
                 if (Console.KeyAvailable)
                 {
