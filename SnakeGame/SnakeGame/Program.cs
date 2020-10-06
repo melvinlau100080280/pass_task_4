@@ -29,6 +29,10 @@ namespace SnakeGame
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
 
+            //scoreboard variables
+            int score = 0;
+            string rank = " ";
+
             // clear to color
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.Clear();
@@ -47,6 +51,15 @@ namespace SnakeGame
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
+                Console.WriteLine("====================="); //scoreboard design
+                Console.WriteLine("Current Score:" + score); //scoreboard display
+                if (score >= 20) { rank = "D"; }
+                if (score >= 40) { rank = "C"; }
+                if (score >= 60) { rank = "B"; }
+                if (score >= 80) { rank = "A"; }
+                if (score >= 99) { rank = "S"; }
+                Console.WriteLine("Achievements : Rank " + rank); //scoreboard rank
+                Console.WriteLine("====================="); //scoreboard design
                 Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
 
@@ -81,6 +94,15 @@ namespace SnakeGame
                             gameLive = false;
                             break;
                     }
+                    if (score == 100)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Congratulation you won the game!! You rank is at Rank " + rank); //win score
+                        Console.WriteLine("Press any key to end the game"); //win score
+                        Console.ReadKey();
+                        gameLive = false;
+                        break;
+                    }
                 }
 
                 // find the current position in the console grid & erase the character there if don't want to see the trail
@@ -98,8 +120,8 @@ namespace SnakeGame
 
                 y += dy;
                 if (y > consoleHeightLimit)
-                    y = 2; // 2 due to top spaces used for directions
-                if (y < 2)
+                    y = 5; // 2 due to top spaces used for directions, 3 more for scoreboard and achievements
+                if (y < 5)
                     y = consoleHeightLimit;
 
                 ++countSteps;// Increment the steps each time the snake moves
