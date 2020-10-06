@@ -16,9 +16,9 @@ namespace SnakeGame
             ConsoleKeyInfo consoleKey; // holds whatever key is pressed
 
             Random rand = new Random();
-            //  display food on the console during the game
-            char food = '@';
+            char food = '@';//  display food on the console during the game
             int fx, fy;
+            int countSteps = 0; // count steps moved
             //random generate food location
             fx = rand.Next(0, 79);  
             fy = rand.Next(2, 24);
@@ -101,6 +101,19 @@ namespace SnakeGame
                     y = 2; // 2 due to top spaces used for directions
                 if (y < 2)
                     y = consoleHeightLimit;
+
+                ++countSteps;
+                //change the food locaiton when snake eats it or at a specific interval
+                if((x== fx && y == fy)||countSteps > 200)
+                {
+                    /*erase the current food*/
+                    Console.SetCursorPosition(fx, fy);
+                    Console.Write(' ');
+                    /*set a new random position for food*/
+                    fx = rand.Next(0, 79);
+                    fy = rand.Next(2, 24);
+                    countSteps = 0; //reset countSteps
+                }
 
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
