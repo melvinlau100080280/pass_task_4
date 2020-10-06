@@ -102,9 +102,9 @@ namespace SnakeGame
                 if (y < 2)
                     y = consoleHeightLimit;
 
-                ++countSteps;
+                ++countSteps;// Increment the steps each time the snake moves
                 //change the food locaiton when snake eats it or at a specific interval
-                if((x== fx && y == fy)||countSteps > 200)
+                if ((x== fx && y == fy)||countSteps > 200)
                 {
                     /*erase the current food*/
                     Console.SetCursorPosition(fx, fy);
