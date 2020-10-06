@@ -21,10 +21,10 @@ namespace SnakeGame
             int countSteps = 0; // count steps each time the snake moves
             //random generate food location
             fx = rand.Next(0, 79);  
-            fy = rand.Next(2, 24);
+            fy = rand.Next(5, 24);
 
             // location info & display
-            int x = 0, y = 2; // y is 2 to allow the top row for directions & space
+            int x = 0, y = 5; // y is 2 to allow the top row for directions & space
             int dx = 1, dy = 0;
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
@@ -53,11 +53,11 @@ namespace SnakeGame
                 Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                 Console.WriteLine("====================="); //scoreboard design
                 Console.WriteLine("Current Score:" + score); //scoreboard display
-                if (score >= 20) { rank = "D"; }
-                if (score >= 40) { rank = "C"; }
-                if (score >= 60) { rank = "B"; }
-                if (score >= 80) { rank = "A"; }
-                if (score >= 99) { rank = "S"; }
+                if (score >= 10) { rank = "D"; }
+                if (score >= 20) { rank = "C"; }
+                if (score >= 30) { rank = "B"; }
+                if (score >= 40) { rank = "A"; }
+                if (score >= 50) { rank = "S"; }
                 Console.WriteLine("Achievements : Rank " + rank); //scoreboard rank
                 Console.WriteLine("====================="); //scoreboard design
                 Console.SetCursorPosition(x, y);
@@ -94,7 +94,7 @@ namespace SnakeGame
                             gameLive = false;
                             break;
                     }
-                    if (score == 100)
+                    if (score == 49)
                     {
                         Console.Clear();
                         Console.WriteLine("Congratulation you won the game!! You rank is at Rank " + rank); //win score
@@ -114,28 +114,67 @@ namespace SnakeGame
                 // note x set to 0 because we use the whole width, but y set to 1 because we use top row for instructions
                 x += dx;
                 if (x > consoleWidthLimit)
+                {
                     x = 0;
+                    Console.Clear();
+                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
+                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+                    
                 if (x < 0)
+                {
                     x = consoleWidthLimit;
+                    Console.Clear();
+                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
+                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+                   
 
                 y += dy;
                 if (y > consoleHeightLimit)
+                {
                     y = 5; // 2 due to top spaces used for directions, 3 more for scoreboard and achievements
+                    Console.Clear();
+                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
+                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+                    
                 if (y < 5)
+                {
                     y = consoleHeightLimit;
+                    Console.Clear();
+                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
+                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+                    
 
                 ++countSteps;// Increment the steps each time the snake moves
                 //change the food locaiton when snake eats it or at a specific interval
                 if ((x== fx && y == fy)||countSteps > 200)
                 {
+                    //add score
+                    score++;
                     /*erase the current food*/
                     Console.SetCursorPosition(fx, fy);
                     Console.Write(' ');
                     /*set a new random position for food*/
                     fx = rand.Next(0, 79);
-                    fy = rand.Next(2, 24);
+                    fy = rand.Next(5, 24);
                     countSteps = 0; //reset countSteps
                 }
+
 
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
