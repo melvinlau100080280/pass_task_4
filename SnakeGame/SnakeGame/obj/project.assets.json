@@ -8,12 +8,18 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+    "C:\\Users\\Z\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+>>>>>>> 819aab6123b9c025dce5fdebb7a07e237fbe9147
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\User\\Desktop\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
       "projectName": "SnakeGame",
       "projectPath": "C:\\Users\\User\\Desktop\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
@@ -22,10 +28,21 @@
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+=======
+      "projectUniqueName": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+      "projectName": "SnakeGame",
+      "projectPath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+      "packagesPath": "C:\\Users\\Z\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+>>>>>>> 819aab6123b9c025dce5fdebb7a07e237fbe9147
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Z\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
