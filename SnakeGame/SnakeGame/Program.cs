@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace SnakeGame
 {
     class Program
@@ -13,7 +15,8 @@ namespace SnakeGame
                 this.row = row;
                 this.col = col;
             }
-        }
+        } //obstacle Wong
+
         static void Main(string[] args)
         {
             // start game
@@ -34,7 +37,7 @@ namespace SnakeGame
             fy = rand.Next(5, 24);
 
             // location info & display
-            int x = 0, y = 5; // y is 2 to allow the top row for directions & space
+            int x = 0, y = 5; // y is 5 to allow the top row for directions & space
             int dx = 1, dy = 0;
             int consoleWidthLimit = 79;
             int consoleHeightLimit = 24;
@@ -53,20 +56,41 @@ namespace SnakeGame
             // whether to keep trails
             bool trail = false;
 
-            //Create random obstacles
+            //text
+            string s = "Game Over!! You hit an obstacle, you are at Rank" + rank;
+            string s2 = "Press any key to end the game";
+            string s3 = "Congratulation you won the game!! You rank is at Rank " + rank;
+
+            //new obj
+           /* Random rando = new Random();
+            char obj = '|';
+            int object_x, object_y;
+            object_x = rando.Next(0, 79);
+            object_y = rando.Next(5, 24); */
+
+            
+
+           //Create random obstacles
             List<Position> obstacles = new List<Position>();
             Random randomobs = new Random();
-            obstacles.Add(new Position(randomobs.Next(2, 24), randomobs.Next(1, 79)));
-            obstacles.Add(new Position(randomobs.Next(2, 24), randomobs.Next(1, 79)));
-         
-       
-            //Display obstacles
+            obstacles.Add(new Position(randomobs.Next(2, 24), randomobs.Next(5, 79)));
+            obstacles.Add(new Position(randomobs.Next(2, 24), randomobs.Next(5, 79)));
+
+            
+
+            //Display obstacles Wong
             foreach (Position obstacle in obstacles)
-            {
-                Console.SetCursorPosition(obstacle.col, obstacle.row);
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write("||");
-            }
+             {
+                 Console.SetCursorPosition(obstacle.col, obstacle.row);
+                 Console.ForegroundColor = ConsoleColor.Cyan;
+                 Console.Write("||");
+
+
+            } 
+
+
+
+
             do // until escape
             {
                 // print directions at top, then restore position
@@ -86,8 +110,8 @@ namespace SnakeGame
                 Console.WriteLine("====================="); //scoreboard design
                 Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
-              
-                
+                Console.Write(x);
+
                 // see if a key has been pressed
                 if (Console.KeyAvailable)
                 {
@@ -119,11 +143,15 @@ namespace SnakeGame
                             gameLive = false;
                             break;
                     }
+
+                    //set winning conditions
                     if (score == 50)
                     {
                         Console.Clear();
-                        Console.WriteLine("Congratulation you won the game!! You rank is at Rank " + rank); //win score
-                        Console.WriteLine("Press any key to end the game"); //win score
+                        Console.SetCursorPosition((Console.WindowWidth - s3.Length) / 2, Console.CursorTop);
+                        Console.WriteLine(s3);
+                        Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                        Console.WriteLine(s2);
                         Console.ReadKey();
                         gameLive = false;
                         break;
@@ -142,8 +170,10 @@ namespace SnakeGame
                 {
                     x = 0;
                     Console.Clear();
-                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
-                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
                     Console.ReadKey();
                     gameLive = false;
                     break;
@@ -153,8 +183,10 @@ namespace SnakeGame
                 {
                     x = consoleWidthLimit;
                     Console.Clear();
-                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
-                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
                     Console.ReadKey();
                     gameLive = false;
                     break;
@@ -166,8 +198,10 @@ namespace SnakeGame
                 {
                     y = 5; // 2 due to top spaces used for directions, 3 more for scoreboard and achievements
                     Console.Clear();
-                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
-                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
                     Console.ReadKey();
                     gameLive = false;
                     break;
@@ -177,8 +211,10 @@ namespace SnakeGame
                 {
                     y = consoleHeightLimit;
                     Console.Clear();
-                    Console.WriteLine("Game Over!! You hit a wall, you are at Rank " + rank); //win score
-                    Console.WriteLine("Press any key to end the game"); //win score
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
                     Console.ReadKey();
                     gameLive = false;
                     break;
@@ -200,7 +236,6 @@ namespace SnakeGame
                     countSteps = 0; //reset countSteps
                 }
 
-
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
                 Console.Write(ch);
@@ -208,6 +243,24 @@ namespace SnakeGame
                 // write the food in the new random position
                 Console.SetCursorPosition(fx, fy);
                 Console.Write(food);
+
+              /*  //new rand obj
+                if (x == object_x && y == object_y)
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+                    //random obj
+                    Console.SetCursorPosition(object_x, object_y);
+                    Console.Write(obj);*/
+
+
 
                 // pause to allow eyeballs to keep up
                 System.Threading.Thread.Sleep(delayInMillisecs);
