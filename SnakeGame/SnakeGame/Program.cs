@@ -84,6 +84,11 @@ namespace SnakeGame
                  Console.SetCursorPosition(obstacle.col, obstacle.row);
                  Console.ForegroundColor = ConsoleColor.Cyan;
                  Console.Write("||");
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> add-game-over-1
             } 
 
 
@@ -108,6 +113,10 @@ namespace SnakeGame
                 Console.WriteLine("====================="); //scoreboard design
                 Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
+<<<<<<< HEAD
+=======
+                Console.Write(x);
+>>>>>>> add-game-over-1
 
                 // see if a key has been pressed
                 if (Console.KeyAvailable)
