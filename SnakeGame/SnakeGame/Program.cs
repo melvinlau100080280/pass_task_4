@@ -190,7 +190,7 @@ namespace SnakeGame
                 if ((x== fx && y == fy)||countSteps > 200)
                 {
                     //add score
-                    score++;
+                    score+=5;
                     /*erase the current food*/
                     Console.SetCursorPosition(fx, fy);
                     Console.Write(' ');
@@ -210,7 +210,10 @@ namespace SnakeGame
                 Console.Write(food);
 
                 // pause to allow eyeballs to keep up
-                System.Threading.Thread.Sleep(delayInMillisecs);
+                if(dy!=0)
+                    System.Threading.Thread.Sleep(delayInMillisecs+20);
+                else
+                    System.Threading.Thread.Sleep(delayInMillisecs);
 
             } while (gameLive);
         }

@@ -1,43 +1,3 @@
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Marlene\source\repos\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Marlene\Desktop\DPT1\Sem 1 2020\Games for tutorial\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Z\Downloads\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
-<<<<<<< HEAD
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
@@ -51,34 +11,3 @@ C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Sn
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
-=======
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
-<<<<<<< HEAD
->>>>>>> adcdd3771142954d0d42a715755df917781f174b
-=======
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
-C:\Users\User\Documents\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
->>>>>>> fa7315958623b2c0906137eec87bd343e02eb7a9

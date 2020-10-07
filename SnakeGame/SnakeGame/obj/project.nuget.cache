@@ -1,20 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-<<<<<<< HEAD
   "dgSpecHash": "JlsnTFLpXilsqjbb6q+bBVnbgggTMWKHHNsBn9azaHdI8NAPoYdnhc+4oBUPEOdTcEj2kQ9tRuBWxwv+82MZ3g==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\Desktop\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
-=======
-  "dgSpecHash": "EZ2Bpgswbp6559C3nXOlVGktacpVCyZmp4he0z7L8LvMtCLx7GWtJVLcMCDid0Xryup3SgZoZEiFWEG2cgh36Q==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
->>>>>>> adcdd3771142954d0d42a715755df917781f174b
-=======
-  "dgSpecHash": "6zPdDDMT7Gi4FhDqXqhOT5ILTjxUZ4IAteOvJ+XAmsB0E/eDdqW7/PxQVNyt0f1KohViuNF6WrdX5cSQXk6AsA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
->>>>>>> fa7315958623b2c0906137eec87bd343e02eb7a9
   "expectedPackageFiles": [],
   "logs": []
 }
