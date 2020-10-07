@@ -57,7 +57,7 @@ namespace SnakeGame
                 if (score >= 20) { rank = "C"; }
                 if (score >= 30) { rank = "B"; }
                 if (score >= 40) { rank = "A"; }
-                if (score >= 50) { rank = "S"; }
+                if (score >= 49) { rank = "S"; }
                 Console.WriteLine("Achievements : Rank " + rank); //scoreboard rank
                 Console.WriteLine("====================="); //scoreboard design
                 Console.SetCursorPosition(x, y);
@@ -94,7 +94,7 @@ namespace SnakeGame
                             gameLive = false;
                             break;
                     }
-                    if (score == 49)
+                    if (score == 50)
                     {
                         Console.Clear();
                         Console.WriteLine("Congratulation you won the game!! You rank is at Rank " + rank); //win score
