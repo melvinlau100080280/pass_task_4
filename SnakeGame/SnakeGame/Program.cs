@@ -115,7 +115,6 @@ namespace SnakeGame
                 Console.ForegroundColor = cc;
 <<<<<<< HEAD
 =======
-                Console.Write(x);
 >>>>>>> add-game-over-1
 
                 // see if a key has been pressed
