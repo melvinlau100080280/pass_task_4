@@ -101,13 +101,22 @@ namespace SnakeGame
                 if (Console.KeyAvailable)
                 {
                     // get key and use it to set options
+
                     consoleKey = Console.ReadKey(true);
-                    switch (consoleKey.Key)
+
+                    // prevent users for moving against their direction
+                    if (!(consoleKey.Key == ConsoleKey.UpArrow && dy == 1) &&
+                       !(consoleKey.Key == ConsoleKey.DownArrow && dy == -1) &&
+                      !(consoleKey.Key == ConsoleKey.LeftArrow && dx == 1) &&
+                       !(consoleKey.Key == ConsoleKey.RightArrow && dx == -1))
+                    {
+                       switch (consoleKey.Key)
                     {
                         case ConsoleKey.UpArrow: //UP
                             dx = 0;
                             dy = -1;
                             Console.ForegroundColor = ConsoleColor.Red;
+
                             break;
                         case ConsoleKey.DownArrow: // DOWN
                             dx = 0;
@@ -127,6 +136,7 @@ namespace SnakeGame
                         case ConsoleKey.Escape: //END
                             gameLive = false;
                             break;
+                    }
                     }
 
                     //set winning conditions
