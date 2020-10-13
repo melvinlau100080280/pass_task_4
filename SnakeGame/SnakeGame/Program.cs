@@ -249,13 +249,10 @@ namespace SnakeGame
                     Console.SetCursorPosition(object_x[i], object_y[i]);
                     Console.Write(obj);
                 }
-                    
 
-
-
-                // pause to allow eyeballs to keep up
+                //pause a little bit longer if snake is moving vertically
                 if(dy!=0)
-                    System.Threading.Thread.Sleep(delayInMillisecs+20);
+                    System.Threading.Thread.Sleep(delayInMillisecs+30);
                 else
                     System.Threading.Thread.Sleep(delayInMillisecs);
 
