@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EZ2Bpgswbp6559C3nXOlVGktacpVCyZmp4he0z7L8LvMtCLx7GWtJVLcMCDid0Xryup3SgZoZEiFWEG2cgh36Q==",
+  "dgSpecHash": "0opPvaYpG7tebifkU9+v4eb3LjlvbtMpxYA3I0yRip8gbWOSGtiZVFgqmzEaS4SqW4972/GGQpIJy28sLDKD2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Z\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Z\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Z\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
   "logs": [
     {
       "code": "Undefined",
