@@ -1,81 +1,100 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.ComponentModel.Design;
+using System.Text;
+using System.Collections;
+using System.Threading;
 
-namespace SnakeGame
+namespace Snake
 {
-
+    struct Position
+    {
+        public int row;
+        public int col;
+        public Position(int row, int col)
+        {
+            this.row = row;
+            this.col = col;
+        }
+    }
     class Program
     {
-
-        struct Position
-        {
-            public int row;
-            public int col;
-            public Position(int row, int col)
-            {
-                this.row = row;
-                this.col = col;
-            }
-        }
-
         static void Main(string[] args)
         {
-            
             // start game
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
-            // display this char on the console during the game
-            char ch = '*';
+
+            int right = 0;
+            int left = 1;
+            int down = 2;
+            int up = 3;
+            // whether to keep trails
+            bool trail = false;
             bool gameLive = true;
-            ConsoleKeyInfo consoleKey; // holds whatever key is pressed
-
-            Random rand = new Random();
-            char food = '@';//  display food on the console during the game
-            int fx, fy;
-            int countSteps = 0; // count steps each time the snake moves
-            //random generate food location
-            fx = rand.Next(0, 79);  
-            fy = rand.Next(5, 24);
-
-            // location info & display
-            int x = 0, y = 5; // y is 5 to allow the top row for directions & space
-            x = rand.Next(20, 50); y = rand.Next(16, 24); //random snake starting point around center of map
-            int dx = 1, dy = 0;
-            int consoleWidthLimit = 79;
-            int consoleHeightLimit = 24;
-
             //scoreboard variables
             int score = 0;
             char rank = '-';
+
+            // delay to slow down the character movement so you can see it
+            int delayInMillisecs = 50;
+
+            //initialise direction
+            int direction = right;
+
+            // count steps each time the snake moves
+            int countSteps = 0;
+
+            // holds whatever key is pressed
+            ConsoleKeyInfo consoleKey;
 
             // clear to color
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.Clear();
 
-            // delay to slow down the character movement so you can see it
-            int delayInMillisecs = 50;
+            //Snake direction
+            Position[] directions = new Position[]
+            {
+                new Position(0, 1), // right
+                new Position(0, -1), // left
+                new Position(1, 0), // down
+                new Position(-1, 0), // up
+            };
 
-            // whether to keep trails
-            bool trail = false;
-
-            //new obj
             Random rando = new Random();
-            char obj = '|';
+            string obj = "||";
             int obstacleNum = 3;
             int[] object_x = new int[3];
             int[] object_y = new int[3];
 
-            for (int i = 0;i < obstacleNum; ++i)
+            int consoleWidthLimit = 79;
+            int consoleHeightLimit = 24;
+
+            for (int i = 0; i < obstacleNum; ++i)
             {
                 object_x[i] = rando.Next(0, 79);
                 object_y[i] = rando.Next(5, 24);
             }
 
+            // display snake on the console during the game
+            Queue<Position> snakeElements = new Queue<Position>();
+            for (int i = 0; i < 3; i++)//start with three character
+            {
+                snakeElements.Enqueue(new Position(6, i));
+            }
+
+            Random rand = new Random();
+            Position food;
+            food = new Position(rand.Next(5, 24), rand.Next(0, 79));
+            Console.SetCursorPosition(food.col, food.row);
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write("@");
+
+            foreach (Position position in snakeElements)
+            {
+                Console.SetCursorPosition(position.col, position.row);
+                Console.Write("*");
+            }
             //upper horizontal wall
             char hori_wall = '_';
             int hori_wallNum = 79;
@@ -119,7 +138,6 @@ namespace SnakeGame
                 object_right_x[i] = 79;
                 object_right_y[i] = i;
             }
-
             do // until escape
             {
                 // print directions at top, then restore position
@@ -130,162 +148,76 @@ namespace SnakeGame
                 Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                 Console.WriteLine("====================="); //scoreboard design
                 Console.WriteLine("Current Score:" + score); //scoreboard display
+                if (score >= 10) { rank = 'D'; }
+                if (score >= 20) { rank = 'C'; }
+                if (score >= 30) { rank = 'B'; }
+                if (score >= 40) { rank = 'A'; }
+                if (score == 50) { rank = 'S'; }
                 Console.WriteLine("Achievements : Rank " + rank); //scoreboard rank
                 Console.WriteLine("====================="); //scoreboard design
-                Console.SetCursorPosition(x, y);
                 Console.ForegroundColor = cc;
-
                 // see if a key has been pressed
                 if (Console.KeyAvailable)
                 {
-                    if (score >= 10) { rank = 'D'; }
-                    if (score >= 20) { rank = 'C'; }
-                    if (score >= 30) { rank = 'B'; }
-                    if (score >= 40) { rank = 'A'; }
-                    if (score == 50) { rank = 'S'; }
-
                     // get key and use it to set options
                     consoleKey = Console.ReadKey(true);
-                    switch (consoleKey.Key)
+                    if (consoleKey.Key == ConsoleKey.LeftArrow)//Left
                     {
-                        case ConsoleKey.UpArrow: //UP
-                            dx = 0;
-                            dy = -1;
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            break;
-                        case ConsoleKey.DownArrow: // DOWN
-                            dx = 0;
-                            dy = 1;
-                            Console.ForegroundColor = ConsoleColor.Cyan;
-                            break;
-                        case ConsoleKey.LeftArrow: //LEFT
-                            dx = -1;
-                            dy = 0;
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            break;
-                        case ConsoleKey.RightArrow: //RIGHT
-                            dx = 1;
-                            dy = 0;
-                            Console.ForegroundColor = ConsoleColor.Black;
-                            break;
-                        case ConsoleKey.Escape: //END
-                            gameLive = false;
-                            break;
+                        if (direction != right) direction = left;
+                        Console.ForegroundColor = ConsoleColor.Green;
                     }
-
-                    //set winning conditions
-                    if (score == 50)
+                    if (consoleKey.Key == ConsoleKey.DownArrow)//Down
                     {
-                        string s2 = "Press any key to end the game";
-                        string s3 = "Congratulation you won the game!! You rank is at Rank " + rank;
-                        Console.Clear();
-                        Console.SetCursorPosition((Console.WindowWidth - s3.Length) / 2, Console.CursorTop);
-                        Console.WriteLine(s3);
-                        Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
-                        Console.WriteLine(s2);
-                        Console.ReadKey();
+                        if (direction != up) direction = down;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    if (consoleKey.Key == ConsoleKey.UpArrow)//Up
+                    {
+                        if (direction != down) direction = up;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    if (consoleKey.Key == ConsoleKey.RightArrow)//Right
+                    {
+                        if (direction != left) direction = right;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                    }
+                    if (consoleKey.Key == ConsoleKey.Escape)
+                    {
                         gameLive = false;
-                        break;
                     }
                 }
-
-                // find the current position in the console grid & erase the character there if don't want to see the trail
-                Console.SetCursorPosition(x, y);
-                if (trail == false)
-                    Console.Write(' ');
-
-                // calculate the new position
-                // note x set to 0 because we use the whole width, but y set to 1 because we use top row for instructions
-                x += dx;
-                if (x >= consoleWidthLimit)
+                //set winning conditions
+                if (score == 50)
                 {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
                     string s2 = "Press any key to end the game";
-                    x = 0;
+                    string s3 = "Congratulation you won the game!! You rank is at Rank " + rank;
                     Console.Clear();
-                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s3.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s3);
                     Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
                     Console.WriteLine(s2);
                     Console.ReadKey();
                     gameLive = false;
                     break;
                 }
+                //Tail of snake
+                Position snakeHead = snakeElements.Last();
 
-                if (x <= 0)
-                {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
-                    string s2 = "Press any key to end the game";
-                    x = consoleWidthLimit;
-                    Console.Clear();
-                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s);
-                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s2);
-                    Console.ReadKey();
-                    gameLive = false;
-                    break;
-                }
+                //New direction of snake
+                Position nextDirection = directions[direction];
+                Position snakeNewHead = new Position(snakeHead.row + nextDirection.row, snakeHead.col + nextDirection.col);
 
+                Console.SetCursorPosition(snakeHead.col, snakeHead.row);
+                Console.Write("*");
 
-                y += dy;
-                if (y >= consoleHeightLimit)
-                {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
-                    string s2 = "Press any key to end the game";
-                    y = 5; // 2 due to top spaces used for directions, 3 more for scoreboard and achievements
-                    Console.Clear();
-                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s);
-                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s2);
-                    Console.ReadKey();
-                    gameLive = false;
-                    break;
-                }
-
-                if (y <= 5)
-                {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
-                    string s2 = "Press any key to end the game";
-                    y = consoleHeightLimit;
-                    Console.Clear();
-                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s);
-                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
-                    Console.WriteLine(s2);
-                    Console.ReadKey();
-                    gameLive = false;
-                    break;
-                }
-
-
-                ++countSteps;// Increment the steps each time the snake moves
-                //change the food locaiton when snake eats it or at a specific interval
-                if ((x == fx && y == fy) || countSteps > 200)
-                {
-                    //add score
-                    score += 10;
-                    /*erase the current food*/
-                    Console.SetCursorPosition(fx, fy);
-                    Console.Write(' ');
-                    /*set a new random position for food*/
-                    fx = rand.Next(1, 78);
-                    fy = rand.Next(6, 23);
-                    countSteps = 0; //reset countSteps
-                }
-
-                // write the character in the new position
-                Console.SetCursorPosition(x, y);
-                Console.Write(ch);
-
-                // write the food in the new random position
-                Console.SetCursorPosition(fx, fy);
-                Console.Write(food);
+                snakeElements.Enqueue(snakeNewHead);
+                Console.SetCursorPosition(snakeNewHead.col, snakeNewHead.row);
+                Console.Write("*");
 
                 //new rand obj
-                for (int i = 0; i < obstacleNum; ++i) 
-                    if (x == object_x[i] && y == object_y[i])
+                for (int i = 0; i < obstacleNum; ++i)
+                {
+                    if (snakeNewHead.col == object_x[i] && snakeNewHead.row == object_y[i])
                     {
                         string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
                         string s2 = "Press any key to end the game";
@@ -298,7 +230,95 @@ namespace SnakeGame
                         gameLive = false;
                         break;
                     }
+                }
+                //When snake collide with food
+                if ((snakeNewHead.col == food.col && snakeNewHead.row == food.row) || countSteps > 100)
+                {
+                    //only increase score when snake collide with food
+                    if ((snakeNewHead.col == food.col) && snakeNewHead.row == food.row)
+                    {
+                        score += 5;
+                    }
+                    /*erase the current food*/
+                    Console.SetCursorPosition(food.col, food.row);
+                    Console.Write(' ');
+                    /*set a new random position for food*/
+                    food = new Position(rand.Next(5, 24), rand.Next(0, 79));
+                    countSteps = 0;
+                }
+                else
+                {
+                    // moving...
+                    Position last = snakeElements.Dequeue();
+                    // find the current position in the console grid & erase the character there if don't want to see the trail
+                    Console.SetCursorPosition(last.col, last.row);
+                    if (trail == false)
+                        Console.Write(' ');
+                }
+                ++countSteps;// Increment the steps each time the snake moves
+                Console.SetCursorPosition(food.col, food.row);
+                Console.Write("@");
 
+
+                if (snakeNewHead.col >= consoleWidthLimit)
+                {
+                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s2 = "Press any key to end the game";
+                    snakeNewHead.col = 0;
+                    Console.Clear();
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+
+                if (snakeNewHead.col <= 0)
+                {
+                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s2 = "Press any key to end the game";
+                    snakeNewHead.col = consoleWidthLimit;
+                    Console.Clear();
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+
+                if (snakeNewHead.row >= consoleHeightLimit)
+                {
+                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s2 = "Press any key to end the game";
+                    snakeNewHead.row = 5; // 2 due to top spaces used for directions, 3 more for scoreboard and achievements
+                    Console.Clear();
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+
+                if (snakeNewHead.row <= 5)
+                {
+                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s2 = "Press any key to end the game";
+                    snakeNewHead.row = consoleHeightLimit;
+                    Console.Clear();
+                    Console.SetCursorPosition((Console.WindowWidth - s.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
                 //random obj
                 for (int i = 0; i < obstacleNum; ++i)
                 {
@@ -333,17 +353,12 @@ namespace SnakeGame
                     Console.SetCursorPosition(object_right_x[i], object_right_y[i]);
                     Console.Write(verti_wall);
                 }
-
                 // pause to allow eyeballs to keep up
-                if (dy!=0)
-                    System.Threading.Thread.Sleep(delayInMillisecs+20);
+                if (snakeHead.col != 0)
+                    System.Threading.Thread.Sleep(delayInMillisecs + 30);
                 else
                     System.Threading.Thread.Sleep(delayInMillisecs);
-
             } while (gameLive);
-            
         }
-
     }
-    
 }
