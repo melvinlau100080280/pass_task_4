@@ -62,7 +62,7 @@ namespace Snake
             };
 
             Random rando = new Random();
-            string obj = "||";
+            string obj = "|";
             int obstacleNum = 3;
             int[] object_x = new int[3];
             int[] object_y = new int[3];
@@ -72,8 +72,8 @@ namespace Snake
 
             for (int i = 0; i < obstacleNum; ++i)
             {
-                object_x[i] = rando.Next(0, 79);
-                object_y[i] = rando.Next(5, 24);
+                object_x[i] = rando.Next(1, 78);
+                object_y[i] = rando.Next(5, 23);
             }
 
             // display snake on the console during the game
@@ -85,7 +85,7 @@ namespace Snake
 
             Random rand = new Random();
             Position food;
-            food = new Position(rand.Next(5, 24), rand.Next(0, 79));
+            food = new Position(rand.Next(6, 23), rand.Next(1, 78));
             Console.SetCursorPosition(food.col, food.row);
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Write("@");
@@ -213,7 +213,7 @@ namespace Snake
 
                 snakeElements.Enqueue(snakeNewHead);
                 Console.SetCursorPosition(snakeNewHead.col, snakeNewHead.row);
-                Console.Write("*");
+                Console.Write("#");
 
                 //new rand obj
                 for (int i = 0; i < obstacleNum; ++i)
@@ -244,7 +244,7 @@ namespace Snake
                     Console.SetCursorPosition(food.col, food.row);
                     Console.Write(' ');
                     /*set a new random position for food*/
-                    food = new Position(rand.Next(5, 24), rand.Next(0, 79));
+                    food = new Position(rand.Next(6, 23), rand.Next(1, 78));
                     countSteps = 0;
                 }
                 else
@@ -263,7 +263,7 @@ namespace Snake
 
                 if (snakeNewHead.col >= consoleWidthLimit)
                 {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                     string s2 = "Press any key to end the game";
                     snakeNewHead.col = 0;
                     Console.Clear();
@@ -278,7 +278,7 @@ namespace Snake
 
                 if (snakeNewHead.col <= 0)
                 {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                     string s2 = "Press any key to end the game";
                     snakeNewHead.col = consoleWidthLimit;
                     Console.Clear();
@@ -293,7 +293,7 @@ namespace Snake
 
                 if (snakeNewHead.row >= consoleHeightLimit)
                 {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                     string s2 = "Press any key to end the game";
                     snakeNewHead.row = 5; // 2 due to top spaces used for directions, 3 more for scoreboard and achievements
                     Console.Clear();
@@ -308,7 +308,7 @@ namespace Snake
 
                 if (snakeNewHead.row <= 5)
                 {
-                    string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
+                    string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                     string s2 = "Press any key to end the game";
                     snakeNewHead.row = consoleHeightLimit;
                     Console.Clear();
