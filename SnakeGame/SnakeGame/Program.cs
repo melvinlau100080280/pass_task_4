@@ -162,7 +162,6 @@ namespace Snake
                     // get key and use it to set options
 
                     consoleKey = Console.ReadKey(true);
-<<<<<<< HEAD
                     if (consoleKey.Key == ConsoleKey.LeftArrow)//Left
                     {
                         if (direction != right) direction = left;
@@ -211,43 +210,6 @@ namespace Snake
 
                 Console.SetCursorPosition(snakeHead.col, snakeHead.row);
                 Console.Write("*");
-=======
-
-                    // prevent users for moving against their direction
-                    if (!(consoleKey.Key == ConsoleKey.UpArrow && dy == 1) &&
-                       !(consoleKey.Key == ConsoleKey.DownArrow && dy == -1) &&
-                      !(consoleKey.Key == ConsoleKey.LeftArrow && dx == 1) &&
-                       !(consoleKey.Key == ConsoleKey.RightArrow && dx == -1))
-                    {
-                       switch (consoleKey.Key)
-                    {
-                        case ConsoleKey.UpArrow: //UP
-                            dx = 0;
-                            dy = -1;
-                            Console.ForegroundColor = ConsoleColor.Red;
-
-                            break;
-                        case ConsoleKey.DownArrow: // DOWN
-                            dx = 0;
-                            dy = 1;
-                            Console.ForegroundColor = ConsoleColor.Cyan;
-                            break;
-                        case ConsoleKey.LeftArrow: //LEFT
-                            dx = -1;
-                            dy = 0;
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            break;
-                        case ConsoleKey.RightArrow: //RIGHT
-                            dx = 1;
-                            dy = 0;
-                            Console.ForegroundColor = ConsoleColor.Black;
-                            break;
-                        case ConsoleKey.Escape: //END
-                            gameLive = false;
-                            break;
-                    }
-                    }
->>>>>>> d117953b972861b004f75e6a18eb5e5865ef187e
 
                 snakeElements.Enqueue(snakeNewHead);
                 Console.SetCursorPosition(snakeNewHead.col, snakeNewHead.row);
@@ -364,7 +326,6 @@ namespace Snake
                     Console.SetCursorPosition(object_x[i], object_y[i]);
                     Console.Write(obj);
                 }
-<<<<<<< HEAD
 
                 //upper horizontal wall
                 for (int i = 0; i < hori_wallNum; ++i)
@@ -394,19 +355,9 @@ namespace Snake
                     Console.Write(verti_wall);
                 }
                 // pause to allow eyeballs to keep up
-<<<<<<< HEAD
                 if (snakeHead.col != 0)
                     System.Threading.Thread.Sleep(delayInMillisecs + 30);
-=======
-                if (dy!=0)
-                    System.Threading.Thread.Sleep(delayInMillisecs+20);
-=======
 
-                //pause a little bit longer if snake is moving vertically
-                if(dy!=0)
-                    System.Threading.Thread.Sleep(delayInMillisecs+30);
->>>>>>> prevent-snake-move-backwards
->>>>>>> d117953b972861b004f75e6a18eb5e5865ef187e
                 else
                     System.Threading.Thread.Sleep(delayInMillisecs);
             } while (gameLive);

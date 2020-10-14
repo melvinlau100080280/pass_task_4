@@ -152,11 +152,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+      "projectUniqueName": "C:\\Users\\User\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
       "projectName": "SnakeGame",
-      "projectPath": "C:\\Users\\User\\Documents\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+      "projectPath": "C:\\Users\\User\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\pass_task_4\\SnakeGame\\SnakeGame\\obj\\",
+      "outputPath": "C:\\Users\\User\\pass_task_4\\SnakeGame\\SnakeGame\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
