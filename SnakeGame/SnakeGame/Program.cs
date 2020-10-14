@@ -138,12 +138,6 @@ namespace SnakeGame
                 // see if a key has been pressed
                 if (Console.KeyAvailable)
                 {
-                    if (score >= 10) { rank = 'D'; }
-                    if (score >= 20) { rank = 'C'; }
-                    if (score >= 30) { rank = 'B'; }
-                    if (score >= 40) { rank = 'A'; }
-                    if (score == 50) { rank = 'S'; }
-
                     // get key and use it to set options
 
                     consoleKey = Console.ReadKey(true);
@@ -183,20 +177,7 @@ namespace SnakeGame
                     }
                     }
 
-                    //set winning conditions
-                    if (score == 50)
-                    {
-                        string s2 = "Press any key to end the game";
-                        string s3 = "Congratulation you won the game!! You rank is at Rank " + rank;
-                        Console.Clear();
-                        Console.SetCursorPosition((Console.WindowWidth - s3.Length) / 2, Console.CursorTop);
-                        Console.WriteLine(s3);
-                        Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
-                        Console.WriteLine(s2);
-                        Console.ReadKey();
-                        gameLive = false;
-                        break;
-                    }
+                    
                 }
 
                 // find the current position in the console grid & erase the character there if don't want to see the trail
@@ -285,6 +266,27 @@ namespace SnakeGame
                     countSteps = 0; //reset countSteps
                 }
 
+                if (score >= 10) { rank = 'D'; }
+                if (score >= 20) { rank = 'C'; }
+                if (score >= 30) { rank = 'B'; }
+                if (score >= 40) { rank = 'A'; }
+                if (score == 50) { rank = 'S'; }
+
+                //set winning conditions
+                if (score == 50)
+                {
+                    string s2 = "Press any key to end the game";
+                    string s3 = "Congratulation you won the game!! You rank is at Rank " + rank;
+                    Console.Clear();
+                    Console.SetCursorPosition((Console.WindowWidth - s3.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s3);
+                    Console.SetCursorPosition((Console.WindowWidth - s2.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s2);
+                    Console.ReadKey();
+                    gameLive = false;
+                    break;
+                }
+
                 // write the character in the new position
                 Console.SetCursorPosition(x, y);
                 Console.Write(ch);
@@ -315,7 +317,7 @@ namespace SnakeGame
                     Console.SetCursorPosition(object_x[i], object_y[i]);
                     Console.Write(obj);
                 }
-<<<<<<< HEAD
+
 
                 //upper horizontal wall
                 for (int i = 0; i < hori_wallNum; ++i)
@@ -348,12 +350,11 @@ namespace SnakeGame
                 // pause to allow eyeballs to keep up
                 if (dy!=0)
                     System.Threading.Thread.Sleep(delayInMillisecs+20);
-=======
+
 
                 //pause a little bit longer if snake is moving vertically
                 if(dy!=0)
                     System.Threading.Thread.Sleep(delayInMillisecs+30);
->>>>>>> prevent-snake-move-backwards
                 else
                     System.Threading.Thread.Sleep(delayInMillisecs);
 

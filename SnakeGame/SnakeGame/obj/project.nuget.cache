@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0opPvaYpG7tebifkU9+v4eb3LjlvbtMpxYA3I0yRip8gbWOSGtiZVFgqmzEaS4SqW4972/GGQpIJy28sLDKD2A==",
+  "dgSpecHash": "gUtRlY5+Kcuf+U5ndRxPDFx3tJIQmLdl/Z/ywUwIEKOvWN4k+IDJJBcBbV6lsmtDtLpZyd3aycU4AUEmtnJk1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
   "expectedPackageFiles": [
@@ -8,12 +8,5 @@
     "C:\\Users\\Z\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Z\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
