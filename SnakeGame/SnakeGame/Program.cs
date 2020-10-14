@@ -145,13 +145,22 @@ namespace SnakeGame
                     if (score == 50) { rank = 'S'; }
 
                     // get key and use it to set options
+
                     consoleKey = Console.ReadKey(true);
-                    switch (consoleKey.Key)
+
+                    // prevent users for moving against their direction
+                    if (!(consoleKey.Key == ConsoleKey.UpArrow && dy == 1) &&
+                       !(consoleKey.Key == ConsoleKey.DownArrow && dy == -1) &&
+                      !(consoleKey.Key == ConsoleKey.LeftArrow && dx == 1) &&
+                       !(consoleKey.Key == ConsoleKey.RightArrow && dx == -1))
+                    {
+                       switch (consoleKey.Key)
                     {
                         case ConsoleKey.UpArrow: //UP
                             dx = 0;
                             dy = -1;
                             Console.ForegroundColor = ConsoleColor.Red;
+
                             break;
                         case ConsoleKey.DownArrow: // DOWN
                             dx = 0;
@@ -171,6 +180,7 @@ namespace SnakeGame
                         case ConsoleKey.Escape: //END
                             gameLive = false;
                             break;
+                    }
                     }
 
                     //set winning conditions
@@ -305,6 +315,7 @@ namespace SnakeGame
                     Console.SetCursorPosition(object_x[i], object_y[i]);
                     Console.Write(obj);
                 }
+<<<<<<< HEAD
 
                 //upper horizontal wall
                 for (int i = 0; i < hori_wallNum; ++i)
@@ -337,6 +348,12 @@ namespace SnakeGame
                 // pause to allow eyeballs to keep up
                 if (dy!=0)
                     System.Threading.Thread.Sleep(delayInMillisecs+20);
+=======
+
+                //pause a little bit longer if snake is moving vertically
+                if(dy!=0)
+                    System.Threading.Thread.Sleep(delayInMillisecs+30);
+>>>>>>> prevent-snake-move-backwards
                 else
                     System.Threading.Thread.Sleep(delayInMillisecs);
 
