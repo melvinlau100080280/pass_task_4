@@ -98,12 +98,29 @@ namespace Snake
                         snakeElements.Enqueue(new Position(6, i));
                     }
 
+                    //normal food generation
                     Random rand = new Random();
                     Position food;
-                    food = new Position(rand.Next(6, 23), rand.Next(1, 78));
+                    food = new Position(rand.Next(7, 23), rand.Next(1, 78));
                     Console.SetCursorPosition(food.col, food.row);
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.Write("@");
+
+                    //bounty food generation
+                    Random rand2 = new Random();
+                    Position bountyfood;
+                    bountyfood = new Position(rand2.Next(7, 23), rand2.Next(1, 78));
+                    Console.SetCursorPosition(bountyfood.col, bountyfood.row);
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("B");
+
+                    //bad food generation 
+                    Random rand3 = new Random();
+                    Position badfood;
+                    badfood = new Position(rand3.Next(7, 23), rand3.Next(1, 78));
+                    Console.SetCursorPosition(badfood.col, badfood.row);
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("X");
 
                     foreach (Position position in snakeElements)
                     {
@@ -162,7 +179,8 @@ namespace Snake
                         Console.SetCursorPosition(0, 0);
                         Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                         Console.WriteLine("====================="); //scoreboard design
-                        Console.WriteLine("Current Score:" + score); //scoreboard display
+                        Console.WriteLine(String.Format("{0,-10} {1,6}", "Current Score:", score)); //updated scoreboard display
+                        if (score < 10) { rank = '-'; }
                         if (score >= 10) { rank = 'D'; }
                         if (score >= 20) { rank = 'C'; }
                         if (score >= 30) { rank = 'B'; }
@@ -272,6 +290,41 @@ namespace Snake
                             food = new Position(rand.Next(6, 23), rand.Next(1, 78));
                             countSteps = 0;
                         }
+
+                        //When snake collide with bounty food
+                        else if ((snakeNewHead.col == bountyfood.col && snakeNewHead.row == bountyfood.row) || countSteps > 100)
+                        {
+                            //only increase score when snake collide with food
+                            if ((snakeNewHead.col == bountyfood.col) && snakeNewHead.row == bountyfood.row)
+                            {
+                                score += 10;
+                            }
+                            /*erase the current food*/
+                            Console.SetCursorPosition(bountyfood.col, bountyfood.row);
+                            Console.Write(' ');
+                            /*set a new random position for food*/
+                            bountyfood = new Position(rand.Next(6, 23), rand.Next(1, 78));
+                            countSteps = 0;
+                        }
+
+                        //When snake collide with bad food
+                        else if ((snakeNewHead.col == badfood.col && snakeNewHead.row == badfood.row) || countSteps > 100)
+                        {
+                            //only increase score when snake collide with food
+                            if ((snakeNewHead.col == badfood.col) && snakeNewHead.row == badfood.row)
+                            {
+                                score -= 5;
+                            }
+                            /*erase the current food*/
+                            Console.SetCursorPosition(badfood.col, badfood.row);
+                            Console.Write(' ');
+                            /*set a new random position for food*/
+                            badfood = new Position(rand.Next(6, 23), rand.Next(1, 78));
+                            countSteps = 0;
+
+                            if (score < 0) { score = 0; }
+                        }
+
                         else
                         {
                             // moving...
@@ -284,6 +337,10 @@ namespace Snake
                         ++countSteps;// Increment the steps each time the snake moves
                         Console.SetCursorPosition(food.col, food.row);
                         Console.Write("@");
+                        Console.SetCursorPosition(bountyfood.col, bountyfood.row);
+                        Console.Write("B");
+                        Console.SetCursorPosition(badfood.col, badfood.row);
+                        Console.Write("X");
 
 
                         if (snakeNewHead.col >= consoleWidthLimit)
