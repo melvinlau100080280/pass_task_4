@@ -70,7 +70,7 @@ namespace Snake
                     ConsoleKeyInfo consoleKey;
 
                     // clear to color
-                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    Console.BackgroundColor = ConsoleColor.Black;
                     Console.Clear();
 
                     //Snake direction
@@ -109,7 +109,7 @@ namespace Snake
                     Position food;
                     food = new Position(rand.Next(7, 23), rand.Next(1, 78));
                     Console.SetCursorPosition(food.col, food.row);
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.Write("@");
 
                     //bounty food generation
@@ -117,7 +117,7 @@ namespace Snake
                     Position bountyfood;
                     bountyfood = new Position(rand2.Next(7, 23), rand2.Next(1, 78));
                     Console.SetCursorPosition(bountyfood.col, bountyfood.row);
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.Write("B");
 
                     //bad food generation 
@@ -125,7 +125,7 @@ namespace Snake
                     Position badfood;
                     badfood = new Position(rand3.Next(7, 23), rand3.Next(1, 78));
                     Console.SetCursorPosition(badfood.col, badfood.row);
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     Console.Write("X");
 
                     foreach (Position position in snakeElements)
@@ -181,7 +181,7 @@ namespace Snake
                         // print directions at top, then restore position
                         // save then restore current color
                         ConsoleColor cc = Console.ForegroundColor;
-                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         Console.SetCursorPosition(0, 0);
                         Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                         Console.WriteLine("====================="); //scoreboard design
@@ -205,22 +205,22 @@ namespace Snake
                             if (consoleKey.Key == ConsoleKey.LeftArrow)//Left
                             {
                                 if (direction != right) direction = left;
-                                Console.ForegroundColor = ConsoleColor.Green;
+                                
                             }
                             if (consoleKey.Key == ConsoleKey.DownArrow)//Down
                             {
                                 if (direction != up) direction = down;
-                                Console.ForegroundColor = ConsoleColor.Cyan;
+                                
                             }
                             if (consoleKey.Key == ConsoleKey.UpArrow)//Up
                             {
                                 if (direction != down) direction = up;
-                                Console.ForegroundColor = ConsoleColor.Red;
+                                
                             }
                             if (consoleKey.Key == ConsoleKey.RightArrow)//Right
                             {
                                 if (direction != left) direction = right;
-                                Console.ForegroundColor = ConsoleColor.Black;
+                                
                             }
                             if (consoleKey.Key == ConsoleKey.Escape)
                             {
