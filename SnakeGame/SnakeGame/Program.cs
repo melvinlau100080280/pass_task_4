@@ -30,6 +30,7 @@ namespace Snake
                 Console.WriteLine("1. Start Game");
                 Console.WriteLine("2. View Scoreboard");
                 Console.WriteLine("3. Quit");
+                Console.WriteLine("4. Help");
                 Console.Write("Enter: ");
                 choice = int.Parse(Console.ReadLine());
                 if (choice == 1)
@@ -472,6 +473,31 @@ namespace Snake
                 else if (choice == 3)
                 {
                     Console.WriteLine("Bye....");
+                }
+                else if (choice == 4)
+                {
+                    Console.Clear();
+                    Console.WriteLine("=====");
+                    Console.WriteLine("INTRO");
+                    Console.WriteLine("=====");
+                    Console.WriteLine("-> Welcome to Snake Game developed by WMS Team. This is a simple snake game developed for assignment purposes.");
+                    Console.WriteLine("============");
+                    Console.WriteLine("INSTRUCTIONS");
+                    Console.WriteLine("============");
+                    Console.WriteLine("-> Press W to move up | Press A to move left | Press S to move down | Press D to move right.");
+                    Console.WriteLine("-> There will be obstacles and walls, hit anyone of them then you'll lose.");
+                    Console.WriteLine("-> The snake moves faster and the food spawn intervals are quicker, scaled by the score you achieved.");
+                    Console.WriteLine("==========");
+                    Console.WriteLine("HOW TO WIN");
+                    Console.WriteLine("==========");
+                    Console.WriteLine("-> There are 3 types of food: Normal Food marked as @ | Bounty Food marked as B | Bad Food marked as X.");
+                    Console.WriteLine("-> Different food grants different score: @ provides 5 points | B provides 10 points | X deducts 5 points.");
+                    Console.WriteLine("-> You can keep track of your rank and score on the scoreboard placed above the game.");
+                    Console.WriteLine("-> Reach 50 points, Voila!! You Win!!");
+                    Console.WriteLine("-------------------------------------");
+                    Console.WriteLine("Press any key to quit Help.");
+                    Console.ReadKey();
+                    
                 }
             } while (choice != 3);
 
