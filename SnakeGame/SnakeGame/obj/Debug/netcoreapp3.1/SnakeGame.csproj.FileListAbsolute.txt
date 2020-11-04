@@ -64,3 +64,9 @@ C:\Users\User\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\AxInterop.
 C:\Users\User\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Interop.WMPLib.dll
 C:\Users\User\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.WMPLib.dll
 C:\Users\User\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
+C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\crash.m4a
+C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\eat.m4a
+C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\music.wav
+C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\AxInterop.WMPLib.dll
+C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\Interop.WMPLib.dll
+C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.WMPLib.dll
