@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Threading;
+using System.IO;
 
 namespace Snake
 {
@@ -474,6 +475,22 @@ namespace Snake
                             System.Threading.Thread.Sleep(delayInMillisecs);
 
                     } while (gameLive);
+                    var path = @"C:\Users\User\pass_task_4\SnakeGame\SnakeGame\Scoreboard.txt";
+                    StreamWriter log;
+                    if (!File.Exists(path))
+                    {
+                        log = new StreamWriter(path);
+                    }
+                    else
+                    {
+                        log = File.AppendText(path);
+                    }
+                    // Write to the file:
+                    log.Write(name);
+                    log.Write(" ");
+                    log.WriteLine(score);
+                    // Close the stream:
+                    log.Close();
                 }
                 else if(choice == 2)
                 {
