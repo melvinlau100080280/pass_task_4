@@ -55,8 +55,13 @@ namespace Snake
                     //initialise direction
                     int direction = right;
 
-                    // count steps each time the snake moves
-                    int countSteps = 0;
+                    // count steps for food each time the snake moves
+                    int countStepsFood = 0;
+                    // count steps for bad food each time the snake moves
+                    int countStepsBadFood = 0;
+                    // count steps for bounty food each time the snake moves
+                    int countStepsBountyFood = 0;
+
                     // food interval
                     int foodInterval = 100;
 
@@ -269,18 +274,12 @@ namespace Snake
 
                         
                         //When snake collide with food
-                        if ((snakeNewHead.col == food.col && snakeNewHead.row == food.row) || countSteps > foodInterval)
+                        if ((snakeNewHead.col == food.col && snakeNewHead.row == food.row) || countStepsFood > foodInterval)
                         {
                             //only increase score when snake collide with food
                             if ((snakeNewHead.col == food.col) && snakeNewHead.row == food.row)
                             {
                                 score += 5;
-
-                                //Ramp up speed by score
-                                delayInMillisecs -= 5;
-
-                                //Decrease food interval 
-                                foodInterval -= 5;
                             }
                             
                             /*erase the current food*/
@@ -288,11 +287,11 @@ namespace Snake
                             Console.Write(' ');
                             /*set a new random position for food*/
                             food = new Position(rand.Next(6, 23), rand.Next(1, 78));
-                            countSteps = 0;
+                            countStepsFood = 0;
                         }
 
                         //When snake collide with bounty food
-                        else if ((snakeNewHead.col == bountyfood.col && snakeNewHead.row == bountyfood.row) || countSteps > 100)
+                        if ((snakeNewHead.col == bountyfood.col && snakeNewHead.row == bountyfood.row) || countStepsBountyFood > foodInterval)
                         {
                             //only increase score when snake collide with food
                             if ((snakeNewHead.col == bountyfood.col) && snakeNewHead.row == bountyfood.row)
@@ -304,12 +303,12 @@ namespace Snake
                             Console.Write(' ');
                             /*set a new random position for food*/
                             bountyfood = new Position(rand.Next(6, 23), rand.Next(1, 78));
-                            countSteps = 0;
+                            countStepsBountyFood = 0;
                         }
 
                         //When snake collide with bad food
-                        else if ((snakeNewHead.col == badfood.col && snakeNewHead.row == badfood.row) || countSteps > 100)
-                        {
+                        if ((snakeNewHead.col == badfood.col && snakeNewHead.row == badfood.row) || countStepsBadFood > foodInterval) { 
+
                             //only increase score when snake collide with food
                             if ((snakeNewHead.col == badfood.col) && snakeNewHead.row == badfood.row)
                             {
@@ -320,7 +319,7 @@ namespace Snake
                             Console.Write(' ');
                             /*set a new random position for food*/
                             badfood = new Position(rand.Next(6, 23), rand.Next(1, 78));
-                            countSteps = 0;
+                            countStepsBadFood = 0;
 
                             if (score < 0) { score = 0; }
                         }
@@ -334,7 +333,10 @@ namespace Snake
                             if (trail == false)
                                 Console.Write(' ');
                         }
-                        ++countSteps;// Increment the steps each time the snake moves
+                        // Increment the steps for each food each time the snake moves
+                        ++countStepsFood;
+                        ++countStepsBountyFood;
+                        ++countStepsBadFood;
                         Console.SetCursorPosition(food.col, food.row);
                         Console.Write("@");
                         Console.SetCursorPosition(bountyfood.col, bountyfood.row);
@@ -438,6 +440,22 @@ namespace Snake
                             Console.Write(verti_wall);
                         }
 
+                        //Reset to default values
+                        delayInMillisecs = 50;
+                        foodInterval = 100;
+                        if (score != 0)
+                        {
+                            //Ramp up speed and decrease food interval scaling with score.
+                            for (int i = 0; i <= score; i += 5)
+                            {
+                                //Ramp up speed by score
+                                delayInMillisecs -= 5;
+                                //Decrease food interval 
+                                foodInterval -= 5;
+                            }
+                        }
+                     
+
                         // pause to allow eyeballs to keep up
                         if (snakeHead.col != 0)
                             System.Threading.Thread.Sleep(delayInMillisecs + 30);
@@ -456,10 +474,7 @@ namespace Snake
                     Console.WriteLine("Bye....");
                 }
             } while (choice != 3);
-            
 
-
-            
         }
     }
 }
