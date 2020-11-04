@@ -26,19 +26,19 @@ namespace Snake
             void collide()
             {
                 WMPLib.WindowsMediaPlayer crash = new WMPLib.WindowsMediaPlayer();
-                crash.URL = @"C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\crash.m4a";
+                crash.URL = @"crash.m4a";
                 crash.controls.play();
             }
             //When snake eat food
             void eat()
             {
                 WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
-                eat.URL = @"C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\eat.m4a";
+                eat.URL = @"eat.m4a";
                 eat.controls.play();
             }
             //BackgroundMusic
             WMPLib.WindowsMediaPlayer music = new WMPLib.WindowsMediaPlayer();
-            music.URL = @"C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\music.wav";
+            music.URL = @"music.wav";
             music.controls.play();
             int choice;
             string name;
@@ -258,6 +258,8 @@ namespace Snake
                         //set winning conditions
                         if (score >= 50)
                         {
+                            //Set the score to 50 so it wont exceed to 50
+                            score = 50;
                             string s2 = "Press any key to end the game";
                             string s3 = "Congratulation you won the game!! You rank is at Rank " + rank;
                             Console.Clear();
@@ -497,7 +499,7 @@ namespace Snake
                             System.Threading.Thread.Sleep(delayInMillisecs);
 
                     } while (gameLive);
-                    var path = @"C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\Scoreboard.txt";
+                    var path = @"Scoreboard.txt";
                     StreamWriter log;
                     if (!File.Exists(path))
                     {
@@ -518,7 +520,7 @@ namespace Snake
                 else if(choice == 2)
                 {
                     Console.Clear();
-                    var path = @"C:\Users\Z\Documents\DP1\pass_task_4\SnakeGame\SnakeGame\Scoreboard.txt";
+                    var path = @"Scoreboard.txt";
                     string[] lines = File.ReadAllLines(path);
                     Console.WriteLine("==========");
                     Console.WriteLine("Scoreboard");
