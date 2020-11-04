@@ -22,6 +22,15 @@ namespace Snake
         static void Main(string[] args)
         {
             int choice;
+            string name;
+            Console.WriteLine("*     *  ******  *        *******   *******   **     **  ******* ");
+            Console.WriteLine("*     *  *       *        *         *     *   *  * *  *  *       ");
+            Console.WriteLine("*  *  *  ******  *        *         *     *   *   *   *  ******* ");
+            Console.WriteLine("* * * *  *       *        *         *     *   *       *  *       ");
+            Console.WriteLine("**   **  ******  *******  *******   *******   *       *  ******* ");
+            Console.WriteLine("");
+            Console.Write("Enter your name: ");
+            name = Console.ReadLine();
             do
             {
                 Console.Clear();
