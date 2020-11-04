@@ -22,6 +22,24 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            //When snake collide with obstacle
+            void collide()
+            {
+                WMPLib.WindowsMediaPlayer crash = new WMPLib.WindowsMediaPlayer();
+                crash.URL = @"C:\Users\User\pass_task_4\SnakeGame\SnakeGame\crash.m4a";
+                crash.controls.play();
+            }
+            //When snake eat food
+            void eat()
+            {
+                WMPLib.WindowsMediaPlayer eat = new WMPLib.WindowsMediaPlayer();
+                eat.URL = @"C:\Users\User\pass_task_4\SnakeGame\SnakeGame\eat.m4a";
+                eat.controls.play();
+            }
+            //BackgroundMusic
+            WMPLib.WindowsMediaPlayer music = new WMPLib.WindowsMediaPlayer();
+            music.URL = @"C:\Users\User\pass_task_4\SnakeGame\SnakeGame\music.wav";
+            music.controls.play();
             int choice;
             string name;
             Console.WriteLine("*     *  ******  *        *******   *******   **     **  ******* ");
@@ -270,6 +288,7 @@ namespace Snake
                         {
                             if (snakeNewHead.col == object_x[i] && snakeNewHead.row == object_y[i])
                             {
+                                collide();
                                 string s = "Game Over!! You hit an obstacle, you are at Rank " + rank;
                                 string s2 = "Press any key to end the game";
                                 Console.Clear();
@@ -290,6 +309,7 @@ namespace Snake
                             //only increase score when snake collide with food
                             if ((snakeNewHead.col == food.col) && snakeNewHead.row == food.row)
                             {
+                                eat();
                                 score += 5;
                             }
                             
@@ -307,6 +327,7 @@ namespace Snake
                             //only increase score when snake collide with food
                             if ((snakeNewHead.col == bountyfood.col) && snakeNewHead.row == bountyfood.row)
                             {
+                                eat();
                                 score += 10;
                             }
                             /*erase the current food*/
@@ -323,6 +344,7 @@ namespace Snake
                             //only increase score when snake collide with food
                             if ((snakeNewHead.col == badfood.col) && snakeNewHead.row == badfood.row)
                             {
+                                eat();
                                 score -= 5;
                             }
                             /*erase the current food*/
