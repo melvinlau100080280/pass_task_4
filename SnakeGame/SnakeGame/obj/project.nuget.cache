@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qXYn8aSW//V26tOiEZOnLA9MM33eS/7jFmtwIoaOT+4xVOLWlorIZMRrTJOObtwEgygfmiOdkTe9cEb61ro7RA==",
+  "dgSpecHash": "otDi+7gJmhz+Y5xkPxrf0nCxHP1myN2wu3Ywl61amJEgln7Sdkjz4w1vW5dPYW8xlFVgiPZBClrdT7ISV92Bqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Z\\Documents\\DP1\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\pass_task_4\\SnakeGame\\SnakeGame\\SnakeGame.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Z\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "C:\\Users\\Z\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\Z\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
-    "C:\\Users\\Z\\.nuget\\packages\\wmplib\\1.0.0\\wmplib.1.0.0.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\wmplib\\1.0.0\\wmplib.1.0.0.nupkg.sha512"
   ],
   "logs": [
     {
