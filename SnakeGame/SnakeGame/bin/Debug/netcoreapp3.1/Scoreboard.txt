@@ -2,3 +2,7 @@ Name: helo | Score: 55
 Name: helo | Score: 55
 Name: helo | Score: 0
 Name: wew | Score: 50
+Name: 1 | Score: 35
+Name: 1 | Score: 35
+Name: 1 | Score: 50
+Name: 11 | Score: 50

@@ -14,7 +14,6 @@ C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\In
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\Interop.WMPLib.dll
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.ResolveComReference.cache
 C:\Users\User\Desktop\pass_task_4\SnakeGame\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
