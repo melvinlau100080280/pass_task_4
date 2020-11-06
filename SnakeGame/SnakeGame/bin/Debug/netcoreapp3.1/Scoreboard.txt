@@ -6,3 +6,4 @@ Name: 1 | Score: 35
 Name: 1 | Score: 35
 Name: 1 | Score: 50
 Name: 11 | Score: 50
+Name: 1 | Score: 0
