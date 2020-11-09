@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Collections;
-using System.Threading;
 using System.IO;
 
 namespace Snake
@@ -256,7 +253,7 @@ namespace Snake
                             }
                         }
                         //set winning conditions
-                        if (score >= 50)
+                        if (score >= 100)
                         {
                             //Set the score to 50 so it wont exceed to 50
                             score = 50;
@@ -324,7 +321,7 @@ namespace Snake
                         }
 
                         //When snake collide with bounty food
-                        if ((snakeNewHead.col == bountyfood.col && snakeNewHead.row == bountyfood.row) || countStepsBountyFood > foodInterval)
+                        else if ((snakeNewHead.col == bountyfood.col && snakeNewHead.row == bountyfood.row) || countStepsBountyFood > foodInterval)
                         {
                             //only increase score when snake collide with food
                             if ((snakeNewHead.col == bountyfood.col) && snakeNewHead.row == bountyfood.row)
@@ -338,6 +335,15 @@ namespace Snake
                             /*set a new random position for food*/
                             bountyfood = new Position(rand.Next(6, 23), rand.Next(1, 78));
                             countStepsBountyFood = 0;
+                        }
+                        else
+                        {
+                            // moving...
+                            Position last = snakeElements.Dequeue();
+                            // find the current position in the console grid & erase the character there if don't want to see the trail
+                            Console.SetCursorPosition(last.col, last.row);
+                            if (trail == false)
+                                Console.Write(' ');
                         }
 
                         //When snake collide with bad food
@@ -359,15 +365,6 @@ namespace Snake
                             if (score < 0) { score = 0; }
                         }
 
-                        else
-                        {
-                            // moving...
-                            Position last = snakeElements.Dequeue();
-                            // find the current position in the console grid & erase the character there if don't want to see the trail
-                            Console.SetCursorPosition(last.col, last.row);
-                            if (trail == false)
-                                Console.Write(' ');
-                        }
                         // Increment the steps for each food each time the snake moves
                         ++countStepsFood;
                         ++countStepsBountyFood;
@@ -379,9 +376,9 @@ namespace Snake
                         Console.SetCursorPosition(badfood.col, badfood.row);
                         Console.Write("X");
 
-
                         if (snakeNewHead.col >= consoleWidthLimit)
                         {
+                            collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
                             snakeNewHead.col = 0;
@@ -397,6 +394,7 @@ namespace Snake
 
                         if (snakeNewHead.col <= 0)
                         {
+                            collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
                             snakeNewHead.col = consoleWidthLimit;
@@ -412,6 +410,7 @@ namespace Snake
 
                         if (snakeNewHead.row >= consoleHeightLimit)
                         {
+                            collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
                             snakeNewHead.row = 5; // 2 due to top spaces used for directions, 3 more for scoreboard and achievements
@@ -427,6 +426,7 @@ namespace Snake
 
                         if (snakeNewHead.row <= 5)
                         {
+                            collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
                             snakeNewHead.row = consoleHeightLimit;
@@ -481,12 +481,12 @@ namespace Snake
                         if (score != 0)
                         {
                             //Ramp up speed and decrease food interval scaling with score.
-                            for (int i = 0; i <= score; i += 5)
+                            for (int i = 0; i < score; i += 5)
                             {
                                 //Ramp up speed by score
-                                delayInMillisecs -= 5;
+                                delayInMillisecs -= 3;
                                 //Decrease food interval 
-                                foodInterval -= 5;
+                                foodInterval -= 2;
                             }
                         }
                      
