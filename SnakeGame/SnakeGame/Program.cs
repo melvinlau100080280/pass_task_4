@@ -39,12 +39,18 @@ namespace Snake
             music.controls.play();
             int choice;
             string name;
-            Console.WriteLine("*     *  ******  *        *******   *******   **     **  ******* ");
-            Console.WriteLine("*     *  *       *        *         *     *   *  * *  *  *       ");
-            Console.WriteLine("*  *  *  ******  *        *         *     *   *   *   *  ******* ");
-            Console.WriteLine("* * * *  *       *        *         *     *   *       *  *       ");
-            Console.WriteLine("**   **  ******  *******  *******   *******   *       *  ******* ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(" _______________________________________________________________________ ");
+            Console.WriteLine("|                                                                       |");
+            Console.WriteLine("|   #       #  ######  #        ########  #######  ##     ##  #######   |");
+            Console.WriteLine("|   #       #  #       #        #         #     #  #  # #  #  #         |");
+            Console.WriteLine("|   #   #   #  ######  #        #         #     #  #   #   #  #######   |");
+            Console.WriteLine("|   #  # #  #  #       #        #         #     #  #       #  #         |");
+            Console.WriteLine("|   ##     ##  ######  #######  ########  #######  #       #  #######   |");
+            Console.WriteLine("|                                                                       |");
+            Console.WriteLine("|_______________________________________________________________________|");
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("Enter your name: ");
             name = Console.ReadLine();
             do

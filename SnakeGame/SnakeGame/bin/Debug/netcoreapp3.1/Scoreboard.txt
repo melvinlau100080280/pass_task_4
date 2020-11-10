@@ -3,3 +3,4 @@ Name: helo | Score: 55
 Name: helo | Score: 0
 Name: wew | Score: 50
 Name: vin | Score: 50
+Name: wong | Score: 50
