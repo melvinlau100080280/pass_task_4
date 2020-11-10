@@ -211,12 +211,12 @@ namespace Snake
                         Console.WriteLine("Arrows move up/down/right/left. Press 'esc' quit.");
                         Console.WriteLine("====================="); //scoreboard design
                         Console.WriteLine(String.Format("{0,-10} {1,6}", "Current Score:", score)); //updated scoreboard display
-                        if (score < 10) { rank = '-'; }
-                        if (score >= 10) { rank = 'D'; }
-                        if (score >= 20) { rank = 'C'; }
-                        if (score >= 30) { rank = 'B'; }
-                        if (score >= 40) { rank = 'A'; }
-                        if (score == 50) { rank = 'S'; }
+                        if (score < 20) { rank = '-'; }
+                        if (score >= 20) { rank = 'D'; }
+                        if (score >= 40) { rank = 'C'; }
+                        if (score >= 60) { rank = 'B'; }
+                        if (score >= 80) { rank = 'A'; }
+                        if (score >= 100) { rank = 'S'; }
                         Console.WriteLine("Achievements : Rank " + rank); //scoreboard rank
                         Console.WriteLine("====================="); //scoreboard design
                         Console.ForegroundColor = cc;
@@ -252,11 +252,20 @@ namespace Snake
                                 gameLive = false;
                             }
                         }
+
+                        //change color when difficulty change
+                        if (score < 20) { Console.ForegroundColor = ConsoleColor.Gray; }
+                        if (score >= 20) { Console.ForegroundColor = ConsoleColor.Green; }
+                        if (score >= 40) { Console.ForegroundColor = ConsoleColor.Cyan; }
+                        if (score >= 60) { Console.ForegroundColor = ConsoleColor.Yellow; }
+                        if (score >= 80) { Console.ForegroundColor = ConsoleColor.Red; }
+                        if (score >= 100) {; Console.ForegroundColor = ConsoleColor.Gray; }
+
                         //set winning conditions
                         if (score >= 100)
                         {
-                            //Set the score to 50 so it wont exceed to 50
-                            score = 50;
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            //Set the score to 100 so it wont exceed to 100
                             string s2 = "Press any key to end the game";
                             string s3 = "Congratulation you won the game!! You rank is at Rank " + rank;
                             Console.Clear();
@@ -353,7 +362,7 @@ namespace Snake
                             if ((snakeNewHead.col == badfood.col) && snakeNewHead.row == badfood.row)
                             {
                                 eat();
-                                score -= 5;
+                                score -= 15;
                             }
                             /*erase the current food*/
                             Console.SetCursorPosition(badfood.col, badfood.row);
@@ -378,6 +387,7 @@ namespace Snake
 
                         if (snakeNewHead.col >= consoleWidthLimit)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
@@ -394,6 +404,7 @@ namespace Snake
 
                         if (snakeNewHead.col <= 0)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
@@ -410,6 +421,7 @@ namespace Snake
 
                         if (snakeNewHead.row >= consoleHeightLimit)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
@@ -426,6 +438,7 @@ namespace Snake
 
                         if (snakeNewHead.row <= 5)
                         {
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             collide();
                             string s = "Game Over!! You hit a wall, you are at Rank " + rank;
                             string s2 = "Press any key to back to main menu";
